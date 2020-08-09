@@ -1,0 +1,36 @@
+import React, { Component } from 'react'
+
+export class AddTodo extends Component {
+
+    state = {
+        title: ''
+    }
+
+    //Setting the value of the change event to whatever was inputted into the field
+    onChange = (e) => this.setState({ title: e.target.value });
+
+
+
+    render() {
+        return (
+            <form style={{ display: "flex" }}>
+                <input
+                    type="text"
+                    name="title"
+                    style={{ flex: "10", padding: "5px" }}
+                    placeholder="Insert Todo.."
+                    value={this.state.title}
+                    onChange={this.onChange}
+                />
+                <input
+                    type="submit"
+                    value="Submit"
+                    className="btn"
+                    style={{ flex: "1" }}
+                />
+            </form>
+        )
+    }
+}
+
+export default AddTodo
